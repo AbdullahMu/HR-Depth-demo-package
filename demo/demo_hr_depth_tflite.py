@@ -44,7 +44,7 @@ def main():
     parser.add_argument(
         "--model",
         type=str,
-        default='model_float16_quant.tflite',
+        default='../saved_model_lite_hr_depth_k_t_encoder_depth_192x640/model_float16_quant.tflite',
     )
     parser.add_argument(
         "--input_size",
@@ -59,7 +59,8 @@ def main():
     input_size = [int(i) for i in input_size.split(',')]
 
     # Initialize video capture
-    cap = cv.VideoCapture(0)
+    # cap = cv.VideoCapture(0)
+    cap = cv.VideoCapture('samples_data_tree.avi')
 
     # Load model
     interpreter = tf.lite.Interpreter(model_path=model_path)

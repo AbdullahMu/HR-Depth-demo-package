@@ -42,7 +42,7 @@ def main():
     parser.add_argument(
         "--model",
         type=str,
-        default='lite_hr_depth_k_t_encoder_depth_192x640.onnx',
+        default='../origin_onnx/lite_hr_depth_k_t_encoder_depth_192x640.onnx',
     )
     parser.add_argument(
         "--input_size",
@@ -57,7 +57,11 @@ def main():
     input_size = [int(i) for i in input_size.split(',')]
 
     # Initialize video capture
-    cap = cv.VideoCapture(0)
+    # cap = cv.VideoCapture(0)
+    cap = cv.VideoCapture('samples_data_tree.avi')
+
+
+
 
     # Load model
     onnx_session = onnxruntime.InferenceSession(model_path)

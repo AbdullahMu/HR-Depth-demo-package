@@ -4,9 +4,9 @@ import sclblonnx as so
 
 H=192
 W=640
-MODEL1=f'lite_hr_depth_k_t_encoder_{H}x{W}.onnx'
-MODEL2=f'lite_hr_depth_k_t_depth_{H}x{W}.onnx'
-MODEL3=f'lite_hr_depth_k_t_encoder_depth_{H}x{W}.onnx'
+MODEL1=f'origin_onnx/lite_hr_depth_k_t_encoder_{H}x{W}.onnx'
+MODEL2=f'origin_onnx/lite_hr_depth_k_t_depth_{H}x{W}.onnx'
+MODEL3=f'origin_onnx/lite_hr_depth_k_t_encoder_depth_{H}x{W}.onnx'
 
 graph1 = gs.import_onnx(onnx.load(MODEL1))
 for n in graph1.nodes:
